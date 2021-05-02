@@ -5,3 +5,5 @@ from . import models
 admin.site.register(models.Student)
 admin.site.register(models.Subject)
 admin.site.register(models.Result)
+admin.site.register(models.SemesterGPA)
+admin.site.register(models.Feedback)

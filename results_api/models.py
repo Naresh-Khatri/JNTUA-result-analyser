@@ -39,7 +39,7 @@ class SemesterGPA(models.Model):
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
+    name = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     message = models.TextField()

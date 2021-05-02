@@ -28,3 +28,8 @@ class SemesterGPAViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.SemesterGPASerializer
     filter_backends = (filters.SearchFilter, filters.OrderingFilter)
     search_fields = ('semester', 'student__name','=student__id')
+
+
+class FeedbackViewSet(viewsets.ModelViewSet):
+    queryset = models.Feedback.objects.all()
+    serializer_class = serializers.FeedbackSerializer

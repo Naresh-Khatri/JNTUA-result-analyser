@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('results_api.urls')),
+    path('jntua/', include('results_api.urls')),
 ]

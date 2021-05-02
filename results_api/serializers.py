@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from results_api.models import Student, Subject, Result, SemesterGPA
+from results_api.models import Student, Subject, Result, SemesterGPA, Feedback
 
 
 class StudentSerializer(serializers.ModelSerializer):
@@ -29,3 +29,10 @@ class SemesterGPASerializer(serializers.ModelSerializer):
         model = SemesterGPA
         fields = '__all__'
         depth=1
+
+
+class FeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feedback
+        fields = '__all__'
+        
