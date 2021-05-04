@@ -19,15 +19,15 @@ class SubjectViewSet(viewsets.ModelViewSet):
 class ResultViewSet(viewsets.ModelViewSet):
     queryset = models.Result.objects.all()
     serializer_class = serializers.ResultSerializer
-    filter_backends = (filters.SearchFilter,)
-    search_fields = ('=student__id', 'subject__semester',)
+    filterset_fields = ['student__id', 'subject__semester', 'regular']
+    #search_fields = ('=student__id', 'subject__semester',)
 
 
 class SemesterGPAViewSet(viewsets.ModelViewSet):
-    queryset = models.SemesterGPA.objects.all()
+    queryset = models.SemesterGPA.objects.order_by('-sgpa')
     serializer_class = serializers.SemesterGPASerializer
-    filter_backends = (filters.SearchFilter, filters.OrderingFilter)
-    search_fields = ('semester', 'student__name','=student__id')
+    filterset_fields = ['student__id', 'semester']
+    #search_fields = ('semester', 'student__name','=student__id')
 
 
 class FeedbackViewSet(viewsets.ModelViewSet):

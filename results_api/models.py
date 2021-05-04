@@ -23,6 +23,7 @@ class Subject(models.Model):
 class Result(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    regular = models.BooleanField(default=True)
     grade = models.CharField(max_length=2)
     passed = models.BooleanField(default=True)
     credit = models.FloatField(default=0)

@@ -19,7 +19,6 @@ class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Result
         fields = '__all__'
-        search_fields = ['student', 'subject']
         depth=1
         #fields = ['id', 'student', 'subject']
 
