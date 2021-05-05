@@ -23,7 +23,7 @@ class Subject(models.Model):
 class Result(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-    regular = models.BooleanField(default=True)
+    semester = models.CharField(max_length=3, default='1')
     grade = models.CharField(max_length=2)
     passed = models.BooleanField(default=True)
     credit = models.FloatField(default=0)
@@ -36,7 +36,7 @@ class SemesterGPA(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     percentile = models.FloatField(default=0)
     sgpa = models.FloatField(default=0)
-    semester = models.IntegerField(default=1)
+    semester = models.CharField(max_length=3, default='1')
 
 
 class Feedback(models.Model):

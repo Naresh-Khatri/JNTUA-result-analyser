@@ -19,7 +19,7 @@ class SubjectViewSet(viewsets.ModelViewSet):
 class ResultViewSet(viewsets.ModelViewSet):
     queryset = models.Result.objects.all()
     serializer_class = serializers.ResultSerializer
-    filterset_fields = ['student__id', 'subject__semester', 'regular']
+    filterset_fields = ['student__id', 'semester']
     #search_fields = ('=student__id', 'subject__semester',)
 
 
